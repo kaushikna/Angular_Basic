@@ -1,0 +1,41 @@
+
+
+<div class="login-container">
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="email" required autocomplete="off">
+            <mat-icon matSuffix>email</mat-icon>
+            <!-- <mat-error *ngIf="getcontrol('email')?.hasError('required')">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="getcontrol('email')?.hasError('email')">
+                Invalid email
+              </mat-error> -->
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" required autocomplete="off">
+            <mat-error *ngIf="getcontrol('password')?.hasError('required')">
+                password is required
+            </mat-error>
+            <mat-error *ngIf="getcontrol('password')?.hasError('minLength')">
+                password minmum 6 length
+            </mat-error>
+          </mat-form-field>
+  
+          <button mat-raised-button color="primary" class="full-width" type="submit">
+            Login
+          </button>
+        </form>
+      </mat-card-content>
+  
+    </mat-card>
+  </div>

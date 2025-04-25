@@ -1,0 +1,186 @@
+@import '../../../styles.scss';
+.nav-left .logo img{
+    height: 55px;
+}
+.navbar{
+    background: whitesmoke;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.20);
+    padding: 0px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .nav-left{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+        .logo{
+            h2{
+                color:  #0652a3;
+                text-align: center;
+                font-size: 40px;
+                font-weight: 800;
+                text-transform: uppercase;
+                margin: 0;
+                padding-right: 30px;
+            }
+        }
+        .menu-list{
+            ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                li{
+                    padding:  20px;
+                    display: inline-block;
+                    cursor: pointer;
+                    position: relative;
+                    ::after{
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background-color: #0652a3;
+                        height: 0;
+                    }
+                    a{
+                        color:  $secondary;
+                        font-size: 16px;
+                        font-weight: 500;
+                        text-decoration: none;
+                    }
+                    &:hover{
+                        background-color: $lightblue;
+                        a{
+                            color: $black;
+                        }
+                    }
+                }
+                .active{
+                    background-color: $lightblue;
+                    a{
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+    .logout{
+        color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    background: #f50b0b;
+    padding: 8px 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    }
+    .menuicon{
+        display: none;
+    }
+}
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.menu-list ul .active a::after{
+    height: 2px !important;
+}
+.menu-list ul li:hover a::after{
+    height: 2px !important;
+}
+
+// @media (max-width : 1750px){
+//     .navbar{
+//         padding: 0px 20px;
+//         .nav-left{
+//             .logo{
+//                 h2{
+//                     font-size: 30px;
+//                     padding-right: 20px;
+//                 }
+//             }
+//             .menu-list{
+//                 ul{
+//                     li{
+//                         padding:  15px;
+//                         a{
+//                             font-size: 16px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//         .logout{
+//             font-size: 16px;
+//         }
+//     }
+// }
+
+@media (max-width : 1000px){
+    .navbar{
+        position: relative;
+        .nav-left{
+            .menu-list{
+                position: absolute;
+                background-color: $secondary;
+                width: 100%;
+                height: fit-content;
+                top: 50px;
+                left: 0;
+                z-index: 999;
+                display: none;
+                ul{
+                    li{
+                        display: block;
+                        padding: 10px 30px ;
+                        a{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+            .showmenu{
+                display: block;
+            }
+        }
+        .nav-right{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .menuicon{
+                display: block;
+                color: $primary;
+            }
+        }
+    }
+}
+@media (max-width : 768px){
+    .navbar{
+        padding: 0px 10px;
+        .nav-left{
+            .logo{
+                h2{
+                    font-size: 30px;
+                    padding-right: 20px;
+                }
+            }
+            .menu-list{
+                ul{
+                    li{
+                        a{
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+        .logout{
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+}

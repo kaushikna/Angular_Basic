@@ -1,0 +1,11 @@
+<div class="modalheader">
+    <h4>Logout</h4>
+    <button class="closebtn" (click)="close()" mat-icon-button  mat-dialog-close>X</button>
+  </div>
+  <div class="modalbody">
+    <h1>Are you sure you want to end your current session?</h1>
+  </div>
+  <div class="modalfooter">
+    <button mat-raised-button color="primary" (click)="close()" class="redbtn" mat-dialog-close>Close</button>
+    <button type="button" mat-raised-button (click)="logOut()" color="primary">Logout    </button>
+  </div>

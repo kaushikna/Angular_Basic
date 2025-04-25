@@ -1,0 +1,26 @@
+<div class="navbar">
+    <div class="nav-left">
+
+        <div class="menu-list" list>
+            <ul [ngClass]="{'showmenu': showMenu}">
+                
+                <li routerLink="/teacher" routerLinkActive="active"><a>Teachers</a></li>
+                <li routerLink="/student" routerLinkActive="active"><a>Students</a></li>
+                
+<!-- <button routerLink="/customers">Customers</button>
+<button routerLink="/orders">Orders</button> -->
+                
+            </ul>
+            
+        </div>
+        
+
+    </div>
+    <div class="nav-right">
+  
+        <a  (click)="onLogout()" class="logout" >
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
+    </div>
+</div>
